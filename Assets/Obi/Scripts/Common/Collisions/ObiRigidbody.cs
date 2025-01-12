@@ -23,7 +23,7 @@ namespace Obi{
 
             var rb = ObiColliderWorld.GetInstance().rigidbodies[handle.index];
 
-            velocity = rb.velocity = unityRigidbody.velocity;
+            velocity = rb.velocity = unityRigidbody.linearVelocity;
             angularVelocity = rb.angularVelocity = unityRigidbody.angularVelocity;
 
             rb.FromRigidbody(unityRigidbody, false);
@@ -41,7 +41,7 @@ namespace Obi{
 			// kinematic rigidbodies are passed to Obi with zero velocity, so we must ignore the new velocities calculated by the solver:
 			if (Application.isPlaying && (unityRigidbody.isKinematic || !kinematicForParticles))
             {
-                unityRigidbody.velocity += linearDelta;
+                unityRigidbody.linearVelocity += linearDelta;
                 unityRigidbody.angularVelocity += angularDelta;
             }
 		}

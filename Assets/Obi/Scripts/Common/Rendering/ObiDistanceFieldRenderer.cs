@@ -55,7 +55,7 @@ namespace Obi
 				cutawayTexture.wrapMode = TextureWrapMode.Clamp;
 				cutawayTexture.hideFlags = HideFlags.HideAndDontSave;
 			}else
-				cutawayTexture.Resize(sampleCount,sampleCount);
+				cutawayTexture.Reinitialize(sampleCount,sampleCount);
 		}
 
 		private void CreatePlaneMesh(ObiDistanceField field){
